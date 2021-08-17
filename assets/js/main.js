@@ -38,7 +38,7 @@ function showHoroscope() {
 
     let selectedMonth = "";
     if (monthSelection.selectedIndex == 0) {
-        selectedMonth = monthText.value;
+        selectedMonth = monthText.value.substr(0, 3);
     } else {
         selectedMonth = monthSelection.value;
     }
@@ -49,60 +49,72 @@ function showHoroscope() {
 
 function evaluate(selectedMonth) {
     let res;
-    switch (selectedMonth.toLowerCase()) {
-        case "mar":
-            res = mar;
-            break;
 
-        case "apr":
-            res = apr;
-            break;
+    /*
+        switch (selectedMonth.toLowerCase()) {
+            case "mar":
+                res = mar;
+                break;
+    
+            case "apr":
+                res = apr;
+                break;
+    
+            case "may":
+                res = may;
+                break;
+    
+            case "jun":
+                res = jun;
+                break;
+    
+            case "jul":
+                res = jul;
+                break;
+    
+            case "aug":
+                res = aug;
+                break;
+    
+            case "sep":
+                res = sep;
+                break;
+    
+            case "oct":
+                res = oct;
+                break;
+    
+            case "nov":
+                res = nov;
+                break;
+    
+            case "dec":
+                res = dec;
+                break;
+    
+            case "jan":
+                res = jan;
+                break;
+    
+            case "feb":
+                res = feb;
+                break;
+    
+            default:
+                res = null
+                break;
+        }
+    */
 
-        case "may":
-            res = may;
-            break;
+    // variant1: less code than a switch()
+    // list.forEach(m => {
+    //     console.log(m.month);
+    //     if (selectedMonth.toLowerCase() == m.month.toLowerCase())
+    //         res = m;
+    // });
 
-        case "jun":
-            res = jun;
-            break;
-
-        case "jul":
-            res = jul;
-            break;
-
-        case "aug":
-            res = aug;
-            break;
-
-        case "sep":
-            res = sep;
-            break;
-
-        case "oct":
-            res = oct;
-            break;
-
-        case "nov":
-            res = nov;
-            break;
-
-        case "dec":
-            res = dec;
-            break;
-
-        case "jan":
-            res = jan;
-            break;
-
-        case "feb":
-            res = feb;
-            break;
-
-        default:
-            res = null
-            break;
-    }
-
+    // variant2: even less code than a forEachg)
+    res = list.find(m => m.month.toLowerCase() == selectedMonth.toLowerCase());
     console.log(res)
 
     if (res != null) {
