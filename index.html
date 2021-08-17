@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Pseudo Horoscope</title>
+</head>
+
+<body>
+
+    <form action="">
+
+        <input type="text" name="monthText" id="monthText" placeholder="month">
+
+        or
+
+        <select name="" id="monthSelection" placeholder="select month">
+            <option value="" placeholder="select a month">&mdash; select &mdash;</option>
+
+        </select>
+
+        <input type="button" value="Show" onclick="showHoroscope()">
+    </form>
+
+    <h1 id="errorText">Please give a month<br><span>jan, feb, mar, ... dec</span></h1>
+
+    <div id="horoscope">
+        <img src="" alt="" id="zodiacImage">
+        <h1 id="zodiacText"></h1>
+        <p id="horoscopeText"></p>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
